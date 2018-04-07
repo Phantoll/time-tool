@@ -1,0 +1,20 @@
+<section class="container mt-24">
+    <nav class="navbar px-0">
+        <!--<div class="mr-auto"></div>-->
+        <button class="btn btn-success" type="button" (click)="open({lorem: 'ipsum'})">
+            {{'new' | translate}}
+            &nbsp;<i class="fa fa-plus"></i>
+        </button>
+    </nav>
+    <table class="table table-hover">
+        <tr>
+        <th colspan="2">Name</th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.surname}}, {{customer.forename}}</td>
+            <td class="text-right">
+                <a (click)="removeCustomer(customer)" class="fa fa-trash fa-lg text-muted"></a>
+            </td>
+        </tr>
+    </table>
+</section>

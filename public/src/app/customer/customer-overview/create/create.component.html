@@ -1,0 +1,30 @@
+<form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+    <div class="modal-header">
+        <h4 class="modal-title">Hi there!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label for="forename">Vorname</label>
+            <input
+                type="text" class="form-control" id="forename" name="forename" placeholder="Vorname"
+                [(ngModel)]="customer.forename" required>
+        </div>
+        <div class="form-group">
+            <label for="surename">Nachname</label>
+            <input
+                type="text" class="form-control" id="surename" name="surename" placeholder="Nachname"
+                [(ngModel)]="customer.surname">
+        </div>
+
+
+        customer: {{customer | json}}
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

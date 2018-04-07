@@ -1,0 +1,17 @@
+{
+    "new": "Neu",
+
+    "CUSTOMER": {
+        "label": "Kunden"
+    },
+    "TICKETS": {
+        "label": "Tickets"
+    },
+    "USER": {
+        "label": "Benutzer"
+    },
+    "DASHBOARD": {
+        "label": "Startseite"
+    }
+
+}
