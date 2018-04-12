@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Boostrap overrides
-$btn-border-radius: 0;
-$btn-border-radius-lg: 0;
-$btn-border-radius-sm: 0;
+$enable-rounded: false;
+$input-focus-box-shadow: 0 0 0 1px #6c757d;
+$btn-focus-box-shadow: none;
 
+$grid-gutter-width: 16px;
 
 @import '~bootstrap/scss/bootstrap';
 @import '~font-awesome/css/font-awesome.css';

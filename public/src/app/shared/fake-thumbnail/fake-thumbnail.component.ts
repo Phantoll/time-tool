@@ -3,7 +3,7 @@ import {FakeThumbnailRandomCategoryService} from "./fake-thumbnail-random-catego
 
 
 @Component({
-    selector: 'app-fake-thumbnail',
+    selector: 'tt-fake-thumbnail',
     templateUrl: './fake-thumbnail.component.html'
 })
 export class FakeThumbnailComponent implements OnChanges {

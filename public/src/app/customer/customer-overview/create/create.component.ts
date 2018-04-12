@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import { JsonPipe } from '@angular/common';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {Customer, CustomerModel} from "../../customer";
+import {CustomerModel} from '../../customer';
 
 @Component({
-    selector: 'app-create',
+    selector: 'tt-create',
     templateUrl: './create.component.html'
 })
 export class CustomerCreateComponent implements OnInit {
@@ -19,9 +18,7 @@ export class CustomerCreateComponent implements OnInit {
 
     onSubmit(form) {
         this.submitted = true;
-        console.log('fdsfd',form, this)
-
-        if(!form || form.status !== 'VALID') return;
+        if (!form || form.status !== 'VALID') return;
 
         this.activeModal.close({customer: this.customer});
     }

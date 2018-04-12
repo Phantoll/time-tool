@@ -1,7 +1,7 @@
 export interface Friend {
-    id: number,
-    name: string,
-    github: string
+    id: number;
+    name: string;
+    github: string;
 }
 
 export let FRIENDLIST: Friend[] = [{

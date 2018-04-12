@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('github-browser App', () => {
+describe('time-tool App', () => {
   let page: AppPage;
 
   beforeEach(() => {

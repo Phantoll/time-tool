@@ -1,10 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {CoreNavigationComponent} from './core-navigation.component';
-import {SharedModule} from "../../shared/shared.module";
-import {RouterModule} from "@angular/router";
-
-import {TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from '../../shared/shared.module';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('CoreNavigationComponent', () => {
     let component: CoreNavigationComponent;
@@ -12,10 +10,9 @@ describe('CoreNavigationComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [SharedModule, RouterModule, TranslateModule],
+            imports: [SharedModule, RouterTestingModule],
             declarations: [CoreNavigationComponent]
-        })
-            .compileComponents();
+        }).compileComponents();
     }));
 
     beforeEach(() => {

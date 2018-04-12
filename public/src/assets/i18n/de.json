@@ -1,11 +1,18 @@
 {
     "new": "Neu",
-
+    "SHARED": {
+        "fieldErrors": {
+            "required": "Bitte geben Sie einen Wert ein",
+            "minlength": "Bitte geben Sie mindestens {{requiredLength}} Zeichen ein",
+            "maxlength": "Bitte geben Sie maximal {{requiredLength}} Zeichen ein"
+        }
+    },
     "CUSTOMER": {
         "label": "Kunden"
     },
     "TICKETS": {
-        "label": "Tickets"
+        "label": "Tickets",
+        "createNew": "Ticket anlegen"
     },
     "USER": {
         "label": "Benutzer"

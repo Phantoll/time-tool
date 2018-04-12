@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label [for]="fieldId">{{label | translate}}</label>
+
+    <ng-content></ng-content>
+
+    <div class="text-danger" *ngFor="let error of mapErrors()">
+        <small>{{'SHARED.fieldErrors.'+ error.key | translate:error.params}}</small>
+    </div>
+</div>

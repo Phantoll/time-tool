@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
 import {FriendOverviewComponent} from './friend-overview/friend-overview.component';
 
 @NgModule({
@@ -12,6 +11,7 @@ import {FriendOverviewComponent} from './friend-overview/friend-overview.compone
     ],
     exports: [
         FriendOverviewComponent
-    ]
+    ],
+    providers: []
 })
 export class FriendModule {}

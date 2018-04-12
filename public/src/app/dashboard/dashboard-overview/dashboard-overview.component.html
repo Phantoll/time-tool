@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="tt-dashboard-overview">
+        <div class="row">
+            <tt-dashboard-card class="col-md" title="Lorem Ipsum">
+                This Is the New Transclude
+            </tt-dashboard-card>
+            <tt-dashboard-card title="TICKETS.createNew" accent="dark" class="col-md">
+                <form #ticketForm="ngForm" (ngSubmit)="doSubmit(ticketForm)">
+
+                    <!--<tt-field-number label="FooBar"-->
+                                     <!--[minValue]="5"-->
+                                     <!--[(ngModel)]="ticket.testNumber" name="testNumber">-->
+                    <!--</tt-field-number>-->
+
+                    <tt-field-text label="DASHBOARD.label" [(ngModel)]="ticket.test" name="test"></tt-field-text>
+
+                    <tt-field-text label="new"
+                                   name="lorem"
+                                   [(ngModel)]="ticket.lorem"
+                                   [minLength]="2"
+                                   [maxLength]="6"
+                                   [isRequired]="true">
+                    </tt-field-text>
+                    <button class="btn btn-default" type="submit">Senden</button>
+                </form>
+
+                ticket: {{ticket| json}}
+
+            </tt-dashboard-card>
+
+
+            <div class="w-100"></div>
+            <tt-dashboard-card title="bsdfds" class="col-md">
+                Liste
+            </tt-dashboard-card>
+
+            <tt-dashboard-card title="Hallo Welt" class="col-md">
+                Liste...
+            </tt-dashboard-card>
+            <tt-dashboard-card title="Hallo Welt" class="col-md">
+                Liste...
+            </tt-dashboard-card>
+        </div>
+    </div>
+</div>

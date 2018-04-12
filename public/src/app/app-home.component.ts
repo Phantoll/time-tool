@@ -4,7 +4,7 @@ import {FakeThumbnailRandomCategoryService} from "./shared/fake-thumbnail/fake-t
 
 
 @Component({
-    selector: 'app-home',
+    selector: 'tt-home',
     templateUrl: './app-home.component.html'
 })
 export class AppHomeComponent {

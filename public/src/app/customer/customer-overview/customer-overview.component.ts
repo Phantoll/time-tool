@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Customer} from "../customer";
 import {CustomerCreateComponent} from './create/create.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {remove, find, uniqueId} from 'lodash/fp'
+import {remove, find, uniqueId} from 'lodash/fp';
 import {CustomerRepositoryService} from "../customer-repository.service";
 
 @Component({
-    selector: 'app-customer-overview',
+    selector: 'tt-customer-overview',
     templateUrl: './customer-overview.component.html',
     styleUrls: ['./customer-overview.component.scss']
 })

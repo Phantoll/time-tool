@@ -1,9 +1,9 @@
 import {assignIn} from 'lodash';
 
 export interface Customer {
-    forename: string,
-    surname: string,
-    gender: 'male' | 'female'
+    forename: string;
+    surname: string;
+    gender: 'male' | 'female';
 }
 
 

@@ -7,7 +7,7 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 // Routing -------------------------------------------
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import {routes} from './app.routes';
 
 // APP - Components ----------------------------------
@@ -16,10 +16,11 @@ import {AppHomeComponent} from './app-home.component';
 
 
 // App - Modules -------------------------------------
-import {CoreModule} from "./core/core.module";
-import {SharedModule} from "./shared/shared.module";
-import {FriendModule} from "./friend/friend.module";
-import {CustomerModule} from "./customer/customer.module";
+import {CoreModule} from './core/core.module';
+import {SharedModule} from './shared/shared.module';
+import {DashboardModule} from './dashboard/dashboard.module';
+import {FriendModule} from './friend/friend.module';
+import {CustomerModule} from './customer/customer.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -42,13 +43,13 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
         NgbModule.forRoot(),
-
         CoreModule,
         SharedModule,
+        DashboardModule,
         CustomerModule,
         FriendModule
     ],
-    bootstrap: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

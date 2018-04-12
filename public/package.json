@@ -1,5 +1,5 @@
 {
-  "name": "github-browser",
+  "name": "time-tool",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -48,8 +48,10 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "node-sass": "^4.8.3",
     "npm": "^5.8.0",
+    "phantomjs-prebuilt": "^2.1.16",
     "popper.js": "^1.14.1",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",

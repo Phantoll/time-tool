@@ -1,0 +1,19 @@
+<tt-field-abstract [fieldInstance]="field" [fieldId]="id" [label]="label">
+    <div class="input-group">
+        <input
+            [id]="id"
+            class="form-control" [(ngModel)]="value" name="value"
+            [required]="isRequired"
+            [attr.placeholder]="placeholder"
+
+            type="text"
+            #field="ngModel">
+        <div class="input-group-prepend" *ngIf="hasValidation()">
+            <div class="input-group-text">
+                <i class="fa" [ngClass]="[field.errors? 'fa-times text-danger' : 'fa-check text-success']"></i>
+            </div>
+        </div>
+    </div>
+
+    {{field.errors | json}}
+</tt-field-abstract>

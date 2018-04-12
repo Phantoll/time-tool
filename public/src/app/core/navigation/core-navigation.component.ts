@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
-import {routes, RouteItem} from "../../app.routes";
+import {routes, RouteItem} from '../../app.routes';
 import {map, filter} from 'lodash/fp';
 
 @Component({
-    selector: 'app-core-navigation',
+    selector: 'tt-core-navigation',
     templateUrl: './core-navigation.component.html',
 })
 export class CoreNavigationComponent implements OnInit {
