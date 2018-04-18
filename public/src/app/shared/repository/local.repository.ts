@@ -1,13 +1,16 @@
 import {find, remove, maxBy} from 'lodash/fp';
+import {Repository} from './repository';
 
-export class LocalRepository {
+export class LocalRepository implements Repository {
     protected records = [];
     public idProperty = 'id';
+
 
     constructor(private resourceId: string) {
         this.getAll().then((records) => {
             this.records = records;
         });
+        return this;
     }
 
     add(newRecord) {

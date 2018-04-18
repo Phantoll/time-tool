@@ -1,12 +1,14 @@
-<tt-field-abstract [fieldInstance]="field" [fieldId]="id" [label]="label">
+<tt-field-abstract [fieldInstance]="field" [fieldId]="id" [label]="label" [extraParams]="{min: minValue, max: maxValue}">
     <div class="input-group">
         <input
             [id]="id"
+            currencyMask
             class="form-control" [(ngModel)]="value" name="value"
             [required]="isRequired"
             [attr.placeholder]="placeholder"
-
-            type="text"
+            [options]="{'prefix': '', align: 'left', precision: 0, thousands: ''}"
+            [min]="minValue"
+            [max]="maxValue"
             #field="ngModel">
         <div class="input-group-prepend" *ngIf="hasValidation()">
             <div class="input-group-text">
@@ -15,5 +17,5 @@
         </div>
     </div>
 
-    {{field.errors | json}}
+    <!--{{field.errors | json}}-->
 </tt-field-abstract>

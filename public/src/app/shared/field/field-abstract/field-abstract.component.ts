@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {map} from 'lodash';
+import {map, assignIn} from 'lodash';
 
 @Component({
     selector: 'tt-field-abstract',
@@ -10,9 +10,11 @@ export class FieldAbstractComponent {
     @Input() label;
     @Input() fieldInstance;
     @Input() fieldId;
+    @Input() extraParams?: object;
 
     mapErrors() {
         const mapToKeyValue = (params, key) => {
+            if (this.extraParams) params = assignIn(params, this.extraParams);
             return {params, key};
         };
         return map(this.fieldInstance.errors, mapToKeyValue);

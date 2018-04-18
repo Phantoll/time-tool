@@ -8,16 +8,16 @@ export abstract class FieldAbstractController implements ControlValueAccessor {
     @Input() isRequired?: boolean;
 
     protected id: string;
-    public validationFields: any[];
+    public validationFields: any;
 
-    protected constructor() {
+    constructor() {
         this.id = uniqueId('tt-field-');
     }
 
     _value: any = '';
     get value(): any {
         return this._value;
-    };
+    }
 
     set value(v: any) {
         if (v !== this._value) {

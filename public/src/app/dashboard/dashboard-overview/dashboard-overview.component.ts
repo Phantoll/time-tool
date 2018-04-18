@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {RepositoryService} from "../../shared/repository/repository.service";
 
 @Component({
     selector: 'tt-dashboard-overview',
@@ -11,10 +12,21 @@ export class DashboardOverviewComponent implements OnInit {
         lorem: '432343243ew252343232'
     };
 
-    constructor() {
+    public users = []
+
+    repository;
+    constructor(repositoryService: RepositoryService) {
+        this.repository = repositoryService.create('user');
     }
 
     ngOnInit() {
+        this.repository.getAll().subscribe((response) => {
+            this.users = response;
+        }, err => {
+            console.log(err.message);
+        }, () => {
+            console.log('completed');
+        });
     }
 
     doSubmit(...args) {

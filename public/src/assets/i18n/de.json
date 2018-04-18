@@ -4,7 +4,9 @@
         "fieldErrors": {
             "required": "Bitte geben Sie einen Wert ein",
             "minlength": "Bitte geben Sie mindestens {{requiredLength}} Zeichen ein",
-            "maxlength": "Bitte geben Sie maximal {{requiredLength}} Zeichen ein"
+            "maxlength": "Bitte geben Sie maximal {{requiredLength}} Zeichen ein",
+            "min": "Der Wert darf nicht kleiner als {{min}} sein",
+            "max": "Der Wert darf nicht größer als {{max}} sein"
         }
     },
     "CUSTOMER": {

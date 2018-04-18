@@ -2,15 +2,20 @@
     <div class="tt-dashboard-overview">
         <div class="row">
             <tt-dashboard-card class="col-md" title="Lorem Ipsum">
-                This Is the New Transclude
+               <table clasS="table">
+                   <tr *ngFor="let user of users">
+                       <td>{{user.email}}</td>
+                       <td>{{user.username}}</td>
+                   </tr>
+               </table>
             </tt-dashboard-card>
             <tt-dashboard-card title="TICKETS.createNew" accent="dark" class="col-md">
                 <form #ticketForm="ngForm" (ngSubmit)="doSubmit(ticketForm)">
 
-                    <!--<tt-field-number label="FooBar"-->
-                                     <!--[minValue]="5"-->
-                                     <!--[(ngModel)]="ticket.testNumber" name="testNumber">-->
-                    <!--</tt-field-number>-->
+                    <tt-field-number label="FooBar"
+                                     [maxValue]="1999"
+                                     [(ngModel)]="ticket.testNumber" name="testNumber">
+                    </tt-field-number>
 
                     <tt-field-text label="DASHBOARD.label" [(ngModel)]="ticket.test" name="test"></tt-field-text>
 
