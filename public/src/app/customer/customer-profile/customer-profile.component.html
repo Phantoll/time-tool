@@ -1,0 +1,54 @@
+<section class="tt-customer-profile">
+    <div class="tt-customer-profile-header">
+        <div class="card">
+            <div class="card-img-top tt-customer-type-company"></div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    Manfred Mustermann GmbH
+                </h5>
+                <p class="card-text">
+                    Musterstr. 123 <br/>
+                    12456 Musterhausen
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Ansprechpartner</div>
+            <div class="card-body">
+                <p class="card-text">
+                    Manfred Mustermann <br/> Tel.: 0123 / 45 67 89
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Neue Tickets</div>
+            <div class="card-body p-0">
+                <table class="table m-0">
+                    <tr>
+                        <td>Fehler in XY</td>
+                    </tr>
+                    <tr>
+                        <td>Fehler in XY</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tt-customer-profile-content">
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/customer',customerId,'dashboard']">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/customer',customerId,'form']">Link</a>
+            </li>
+        </ul>
+        <div class="tab-content clearfix">
+            {{customerId}}
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</section>

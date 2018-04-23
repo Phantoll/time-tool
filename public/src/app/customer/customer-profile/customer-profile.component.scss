@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+.tt-customer-profile {
+    display: flex;
+    align-items: stretch;
+    margin-top: 0;
+    height: calc(100vh - 4rem);
+    &-header {
+        width: 300px;
+        .card {
+            margin: 1.4rem;
+        }
+    }
+    &-content {
+        border-left: 1px solid $gray-400;
+        flex: 1;
+        background-color: $gray-200;
+
+        .tab-content {
+            //padding: 1.4rem;
+        }
+    }
+}
+
+.tt-customer-type-company {
+    height: 100px;
+    background-image: url('../../../assets/images/company.jpg');
+    background-size: cover;
+}
