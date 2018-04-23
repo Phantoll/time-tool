@@ -13,7 +13,7 @@ export class LocalRepository implements Repository {
         return this;
     }
 
-    add(newRecord) {
+    save(newRecord) {
         if (!newRecord[this.idProperty]) newRecord[this.idProperty] = this.getNextId();
 
         this.records.push(newRecord);
@@ -42,7 +42,7 @@ export class LocalRepository implements Repository {
         this.records = remove(isRecord)(this.records);
 
         this.updateLocalStorage();
-        return this.getAll()
+        return this.getAll();
     }
 
 

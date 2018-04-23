@@ -1,4 +1,4 @@
-import {find, remove, maxBy} from 'lodash/fp';
+import {omit, isNil} from 'lodash/fp';
 import {Repository} from './repository';
 import {HttpHeaders, HttpClient} from '@angular/common/http';
 
@@ -20,23 +20,36 @@ export class SailsRepository implements Repository {
     constructor(private resourceId: string, private http: HttpClient) {
     }
 
-    add(newRecord) {
+    save(record) {
+        if (isNil(record[this.idProperty])) delete record[this.idProperty];
+        return record[this.idProperty] ? this.updateRecord(record) : this.createRecord(record);
     }
 
     getRecord(recordId) {
-        return this.getAll().resolve((records) => {
-            const isRecord = (record) => record[this.idProperty] === recordId;
-            return find(records)(isRecord);
-        });
-    }
-
-    getAll(): any {
-        const url = `${baseURL}/${this.resourceId}`;
-        console.log(url);
+        const url = `${baseURL}/${this.resourceId}/find?${this.idProperty}=${recordId}`;
         return this.http.get(url, httpOptions);
     }
 
+    getAll(): any {
+        return this.http.get(this.getBaseUrl(), httpOptions);
+    }
+
     removeRecord(record) {
+        return this.http.delete(this.getBaseUrl(record[this.idProperty]));
+    }
+
+    private createRecord(record) {
+        return this.http.post(this.getBaseUrl(), record, httpOptions);
+    }
+
+    private updateRecord(record) {
+        return this.http.put(this.getBaseUrl(record[this.idProperty]), record, httpOptions);
+    }
+
+    private getBaseUrl(recordId = null) {
+        let base = `${baseURL}/${this.resourceId}`;
+        if (recordId) base += `/${recordId}`;
+        return base;
     }
 }
 

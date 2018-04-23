@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 /**
  * User.js
  *
@@ -5,17 +7,33 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
+function beforeCreate(data, next) {
+    bcrypt.genSalt(5, (error, salt) => {
+        if (error) return next(error);
+
+        bcrypt.hash(data.password, salt, (err, hash) => {
+            if (err) return next(err);
+            data.password = hash;
+            next();
+        })
+    });
+}
+
+
 module.exports = {
     attributes: {
         username: {
-            type: 'string'
+            type: 'string',
+            unique: true
         },
         email: {
             type: 'string'
         },
         password: {
-            type: 'string'
+            type: 'string',
+            columnName: 'encryptedPassword'
         }
-    }
+    },
+    beforeCreate
 };
 

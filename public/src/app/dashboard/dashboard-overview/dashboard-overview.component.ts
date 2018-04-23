@@ -20,6 +20,11 @@ export class DashboardOverviewComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.repository.getRecord(1).subscribe((result) => {
+            console.log('getRecord', result);
+        });
+
+
         this.repository.getAll().subscribe((response) => {
             this.users = response;
         }, err => {

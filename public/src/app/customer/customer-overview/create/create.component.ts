@@ -1,19 +1,24 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {CustomerModel} from '../../customer';
+import {Customer, CustomerModel} from '../../customer';
 
 @Component({
     selector: 'tt-create',
     templateUrl: './create.component.html'
 })
 export class CustomerCreateComponent implements OnInit {
-    customer = new CustomerModel(null, {});
+
+    @Input() customer: Customer;
+
     submitted = false;
 
     constructor(public activeModal: NgbActiveModal) {
     }
 
     ngOnInit() {
+        if (!this.customer) this.customer = new CustomerModel({});
+        console.log(this.customer);
+        console.log(this.activeModal);
     }
 
     onSubmit(form) {

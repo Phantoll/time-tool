@@ -5,6 +5,9 @@ import {CustomerOverviewComponent} from './customer-overview/customer-overview.c
 import {SharedModule} from '../shared/shared.module';
 import {CustomerCreateComponent} from './customer-overview/create/create.component';
 import {CustomerRepositoryService} from './customer-repository.service';
+import {CustomerProfileComponent} from './customer-profile/customer-profile.component';
+import { CustomerProfileFormComponent } from './customer-profile-form/customer-profile-form.component';
+import { CustomerProfileDashboardComponent } from './customer-profile-dashboard/customer-profile-dashboard.component';
 
 @NgModule({
     imports: [
@@ -13,7 +16,7 @@ import {CustomerRepositoryService} from './customer-repository.service';
         FormsModule
     ],
     providers: [CustomerRepositoryService],
-    declarations: [CustomerOverviewComponent, CustomerCreateComponent],
+    declarations: [CustomerOverviewComponent, CustomerCreateComponent, CustomerProfileComponent, CustomerProfileFormComponent, CustomerProfileDashboardComponent],
     entryComponents: [CustomerCreateComponent]
 })
 export class CustomerModule {

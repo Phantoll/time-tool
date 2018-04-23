@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Customer} from "../customer";
+import {Customer} from '../customer';
 import {CustomerCreateComponent} from './create/create.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {remove, find, uniqueId} from 'lodash/fp';
-import {CustomerRepositoryService} from "../customer-repository.service";
+import {CustomerRepositoryService} from '../customer-repository.service';
 
 @Component({
     selector: 'tt-customer-overview',
@@ -22,22 +22,28 @@ export class CustomerOverviewComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.repository.getAll().then(this.setCustomerRecords);
+        this.setCustomerRecords();
     }
 
-    open() {
-        this.modalService.open(CustomerCreateComponent).result.then((result) => {
-            this.repository.add(result.customer).then(this.setCustomerRecords);
+    open(customer: Customer) {
+        const modalRef = this.modalService.open(CustomerCreateComponent);
+        if (customer) modalRef.componentInstance.customer = customer;
+
+        modalRef.result.then((result) => {
+            this.repository
+                .save(result.customer)
+                .subscribe(this.setCustomerRecords);
         }, (reason) => {
         });
+
     }
 
     removeCustomer(customer) {
-        this.repository.removeRecord(customer).then(this.setCustomerRecords);
+        this.repository.removeRecord(customer).subscribe(this.setCustomerRecords);
     }
 
-    setCustomerRecords(currentRecords) {
-        this.customers = currentRecords
+    setCustomerRecords() {
+        this.repository.getAll().subscribe((currentRecords) => this.customers = currentRecords);
     }
 
 }

@@ -21,6 +21,7 @@ import {SharedModule} from './shared/shared.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {FriendModule} from './friend/friend.module';
 import {CustomerModule} from './customer/customer.module';
+import {TicketModule} from './tickets/ticket.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -47,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         SharedModule,
         DashboardModule,
         CustomerModule,
-        FriendModule
+        FriendModule,
+        TicketModule
     ],
     bootstrap: [AppComponent]
 })
